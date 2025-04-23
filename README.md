@@ -1,4 +1,4 @@
-## Automation project created with Selenium WebDriver, Java, Cucumber, TestNG, Gradle
+## Automation project created with Selenium WebDriver, Java, Cucumber, TestNG, Gradle in Visual Studio Code
 ### This project includes test cases to test that user can access to all options in navigation bar, and also all options in a dropdown from submenu. Also we are testing if user can access to other window, execute a test case and back to the original page
 ### Pre requisites
 - To run this project the first step is install [java jdk 21](https://www.oracle.com/java/technologies/downloads/#java21) and configure the environment variables (JAVA_HOME).
