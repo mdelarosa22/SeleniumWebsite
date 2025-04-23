@@ -2,8 +2,6 @@ package pages;
 
 import java.util.Set;
 
-import org.openqa.selenium.By;
-
 public class LinkedInPage extends BasePage{
 
     //locators

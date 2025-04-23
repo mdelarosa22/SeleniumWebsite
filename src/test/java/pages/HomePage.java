@@ -1,7 +1,6 @@
 package pages;
 
 import java.util.Set;
-import org.openqa.selenium.By;
 
 public class HomePage extends BasePage{
 
@@ -12,7 +11,7 @@ public class HomePage extends BasePage{
     String aboutSection = "//a[@id='navbarDropdown']";
     String aboutItem = "//a[@class='dropdown-item']";
     String logoSelenium = "//a[@class='navbar-brand']";
-    String JoinUsLink ="//a[text()='Join us!']";
+    String webDriverText = "//h1[text()='WebDriver']";
 
     public HomePage(){
         super(driver);
@@ -59,6 +58,10 @@ public class HomePage extends BasePage{
 
     public void clickLogo(){
         click(logoSelenium);
+    }
+
+    public void webDriverTextDisplayed(){
+        isDisplayed(webDriverText);
     }
     
 }

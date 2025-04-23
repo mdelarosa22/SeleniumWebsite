@@ -32,4 +32,10 @@ Feature: Testing Selenium Website
     Scenario: I can see LinkedIn page from Join us link
         Given I go to selenium Website
         And I click Join us link
-        #Then I can see linked in page 
+        Then I can see linked logo 
+
+
+    Scenario: I can see Webdriver page when I click in link
+        Given I go to selenium Website
+        And I click in read me link
+        Then I can see Webdriver page

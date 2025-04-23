@@ -15,7 +15,7 @@ public class SeleniumSteps {
     HomePage home = new HomePage();
     LinkedInPage linked = new LinkedInPage();
 
-    @Given("I go to selenium Website")
+    @Given("^I go to selenium Website$")
     public void goToSelenium(){
         home.goToSelenium();
     }
@@ -44,20 +44,40 @@ public class SeleniumSteps {
         home.clickLogo();
     }
 
-    @And("I click Join us link")
+    @And("^I click Join us link$")
     public void clickJoin(){
         String currentWindow = home.getCurrentWindow();
+        System.out.println(currentWindow);
         home.clickJoinUs();
         Set<String> allWindows = home.getAllWindows();
 
         for(String window : allWindows) {
 			if(!window.equals(currentWindow)) {
 				linked.switchLinkedIn(window);
-                Assert.assertTrue(linked.isDisplayedLogo());
-				linked.closeWindow();
 			}
 		}
+    }
 
+    @Then("^I can see linked logo$")
+    public void seeLogo(){
+        Assert.assertTrue(linked.isDisplayedLogo());
+		linked.closeWindow();
+        Set<String> allWindows = home.getAllWindows();
+        String seleniumpage = allWindows.iterator().next();
+        System.out.println(allWindows.iterator().next());
+        linked.switchLinkedIn(seleniumpage);
+    }
+
+    @And("^I click in read me link$")
+    public void clickReadMe(){
+        home.hoverReadMe();
+        home.readMoreWebDriver();
+    }
+
+    @Then("^I can see Webdriver page$")
+    public void iCanSeeWebdriverPage(){
+        System.out.println("holi");
+        home.webDriverTextDisplayed();
     }
 
 }
