@@ -29,9 +29,9 @@ Feature: Testing Selenium Website
             |"Sponsor Us"               |   sponsor     |
 
 
-    Scenario: I can see LinkedIn page from Join us link
+    Scenario: I can see LinkedIn page from logo
         Given I go to selenium Website
-        And I click Join us link
+        And I click LinkedIn logo
         Then I can see linked logo 
 
 

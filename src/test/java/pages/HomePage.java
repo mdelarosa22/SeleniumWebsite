@@ -5,7 +5,7 @@ import java.util.Set;
 public class HomePage extends BasePage{
 
     //Locators
-    String joinUsLink = "//a[text()='Join us!']";
+    String linkedinLogo = "//i[@class='fab fa-linkedin-in']";
 	String readMoreWebDriver = "//a[@class='selenium-button selenium-webdriver text-uppercase fw-bold']";
     String sectionLink = "//a[@href='/%s']";
     String aboutSection = "//a[@id='navbarDropdown']";
@@ -26,8 +26,9 @@ public class HomePage extends BasePage{
         click(xpathSection);
     }
 
-    public void clickJoinUs() {
-		click(joinUsLink);
+    public void clickLinkedInLogo() {
+        hoverOverElement(linkedinLogo);
+		click(linkedinLogo);
 	}
 	
 	public String getCurrentWindow() {

@@ -44,11 +44,11 @@ public class SeleniumSteps {
         home.clickLogo();
     }
 
-    @And("^I click Join us link$")
+    @And("^I click LinkedIn logo$")
     public void clickJoin(){
         String currentWindow = home.getCurrentWindow();
         System.out.println(currentWindow);
-        home.clickJoinUs();
+        home.clickLinkedInLogo();
         Set<String> allWindows = home.getAllWindows();
 
         for(String window : allWindows) {
