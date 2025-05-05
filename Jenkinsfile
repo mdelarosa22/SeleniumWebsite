@@ -10,7 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git branch='main', url:'https://github.com/mdelarosa22/SeleniumWebsite.git'
+                git branch:'main', url:'https://github.com/mdelarosa22/SeleniumWebsite.git'
 
                 // Run Gradle clean
                 sh "gradle clean"
