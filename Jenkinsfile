@@ -17,10 +17,5 @@ pipeline {
 
             }
         }
-        stage("Imprimir"){
-            steps{
-                echo "Test"
-            }        
-        }
     }
 }
