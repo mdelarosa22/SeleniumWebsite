@@ -24,10 +24,10 @@ pipeline {
             echo "Siempre voy a aparecer"
         }
         success {
-            mail subject: 'Build Success', body: 'The build completed successfully.', to: 'maytedesantiago@gmail.com'
+            mail subject: 'Build Success', body: 'The build completed successfully.', to: 'testqamay4@gmail.com'
         }
         failure {
-            mail subject: 'Build Failure', body: 'The build failed.', to: 'maytedesantiago@gmail.com'
+            mail subject: 'Build Failure', body: 'The build failed.', to: 'testqamay4@gmail.com'
         }
     }
 }
