@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -21,7 +22,14 @@ public class BasePage {
 
     static{
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+
+		ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");           // Ejecuta sin GUI
+        options.addArguments("--disable-gpu");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--window-size=1920,1080");
+
+        driver = new ChromeDriver(options);
     }
 
     public BasePage(WebDriver driver){
