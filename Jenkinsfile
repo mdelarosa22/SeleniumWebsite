@@ -43,7 +43,7 @@ pipeline {
         failure {
             emailext (
                 to: 'maytedesantiago@gmail.com',
-                subject: "❌ Falla: Job ${env.JOB_NAME} #${env.BUILD_NUMBER}",51
+                subject: "❌ Falla: Job ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: "Falló la ejecución. Verifica el log: ${env.BUILD_URL}",
                 mimeType: 'text/plain'
             )
