@@ -28,7 +28,15 @@ pipeline {
 
     post{
         always{
-            echo "Siempre voy a aparecer"
+            // ✅ Publicar reporte HTML con HTML Publisher
+            publishHTML(target: [
+                allowMissing: false,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'build/reports/tests/test/',
+                reportFiles: 'index.html',
+                reportName: 'Cucumber HTML Report'
+            ])
         }
 
         success {
