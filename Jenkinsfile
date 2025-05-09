@@ -7,16 +7,23 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
+        stage('Checkout') {
             steps {
-                // Get some code from a GitHub repository
-                git branch:'main', url:'https://github.com/mdelarosa22/SeleniumWebsite.git'
-
-                // Run Gradle clean
-                sh "gradle clean"
-
+                git branch: 'main', url: 'https://github.com/mdelarosa22/SeleniumWebsite.git'
             }
         }
+
+        stage('Clean') {
+            steps {
+                bat 'gradlew.bat clean'  // Usa sh si estás en Linux
+            }
+        }
+
+        stage('Test - @Navigation') {
+            steps {
+                bat 'gradlew.bat test -Dcucumber.options="--tags @Navigation"'
+            }
+        }    
     }
 
     post{
