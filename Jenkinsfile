@@ -34,16 +34,18 @@ pipeline {
         success {
             emailext (
                 to: 'maytedesantiago@gmail.com',
-                subject: '✅ Éxito: Job ${env.JOB_NAME} #${env.BUILD_NUMBER}',
-                body: "La ejecución fue exitosa. Ver detalles en ${env.BUILD_URL}"
+                subject: "✅ Éxito: Job ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: "La ejecución fue exitosa. Ver detalles en ${env.BUILD_URL}",
+                mimeType: 'text/plain'
             )
         }
 
         failure {
             emailext (
                 to: 'maytedesantiago@gmail.com',
-                subject: '❌ Falla: Job ${env.JOB_NAME} #${env.BUILD_NUMBER}',
-                body: "Falló la ejecución. Verifica el log: ${env.BUILD_URL}"
+                subject: "❌ Falla: Job ${env.JOB_NAME} #${env.BUILD_NUMBER}",51
+                body: "Falló la ejecución. Verifica el log: ${env.BUILD_URL}",
+                mimeType: 'text/plain'
             )
         }
     }
