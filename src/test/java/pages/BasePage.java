@@ -23,13 +23,13 @@ public class BasePage {
     static{
         WebDriverManager.chromedriver().setup();
 
-		ChromeOptions options = new ChromeOptions();
+		/*ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");           // Ejecuta sin GUI
         options.addArguments("--disable-gpu");
         options.addArguments("--no-sandbox");
-        options.addArguments("--window-size=1920,1080");
+        options.addArguments("--window-size=1920,1080");*/
 
-        driver = new ChromeDriver(options);
+        driver = new ChromeDriver();
     }
 
     public BasePage(WebDriver driver){
