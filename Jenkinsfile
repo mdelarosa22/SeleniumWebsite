@@ -21,7 +21,7 @@ pipeline {
 
         stage('Test - @Navigation') {
             steps {
-                bat 'gradlew.bat test -Dcucumber.options="--tags @Navigation"'
+                bat 'gradle.bat test -Dcucumber.options="--tags @Navigation"'
             }
         }    
     }
